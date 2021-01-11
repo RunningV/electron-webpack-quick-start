@@ -1,0 +1,44 @@
+{
+  "name": "electron-webpack-quick-start",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "electron-builder -w",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+  },
+  "devDependencies": {
+    "electron": "9.4.0",
+    "electron-builder": "^22.4.1",
+    "electron-webpack": "^2.8.2",
+    "webpack": "~4.42.1"
+  },
+  "build": {
+    "productName": "山西运城机场客流平台",
+    "appId": "com.example.app",
+    "copyright": "北京卓因达科技有限公司",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "target/*"
+    ],
+    "win": {
+      "icon": "packages/favicon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  },
+  "electronWebpack": {
+    "main": {
+      "sourceDirectory": "src/main"
+    }
+  }
+}
